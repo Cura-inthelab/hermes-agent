@@ -1,0 +1,25 @@
+name: feishu
+repo: https://github.com/NousResearch/hermes-official-plugins
+sha: de594506b269c165c01c7982768b9f05b3f69ae6
+subdir: feishu
+description: "Feishu / Lark messaging platform (DMs, groups and topics over the official lark-oapi SDK in WebSocket or webhook mode, QR scan-to-create onboarding, native images, files, audio and video, interactive approval and clarify cards, DM pairing and group @mention policies, drive document-comment replies, meeting invites, cron home-channel delivery) plus the feishu_doc / feishu_drive toolsets (feishu_doc_read, feishu_drive_list_comments, feishu_drive_list_comment_replies, feishu_drive_reply_comment, feishu_drive_add_comment). Formerly built into Hermes core; existing users are migrated automatically. Disclosure — messages, media, documents and comment threads travel between Feishu / Lark's servers (open.feishu.cn or open.larksuite.com) and your Hermes gateway using your own app ID and app secret. In webhook mode the gateway listens on a local HTTP port for Feishu's event callbacks. The plugin also downloads image and file URLs that appear in replies (SSRF-checked)."
+maintainer: NousResearch
+tier: official
+version: "2.0.0"
+category: platform
+requires_hermes: ">=0.23.5"
+docs_url: https://github.com/NousResearch/hermes-official-plugins/tree/main/feishu
+image: https://raw.githubusercontent.com/NousResearch/hermes-official-plugins/de594506b269c165c01c7982768b9f05b3f69ae6/assets/feishu.jpg
+platforms: []
+capabilities:
+  provides_tools:
+    - feishu_doc_read
+    - feishu_drive_list_comments
+    - feishu_drive_list_comment_replies
+    - feishu_drive_reply_comment
+    - feishu_drive_add_comment
+  provides_hooks: []
+  provides_middleware: []
+  requires_env:
+    - FEISHU_APP_ID
+    - FEISHU_APP_SECRET
