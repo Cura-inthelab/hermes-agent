@@ -1,6 +1,12 @@
 name: E2E Desktop
 
 on:
+  # Experiment only: direct dispatch to time this job (it is `if: false` in ci.yaml).
+  workflow_dispatch:
+    inputs:
+      commit:
+        type: string
+        default: ''
   workflow_call:
     inputs:
       commit:
